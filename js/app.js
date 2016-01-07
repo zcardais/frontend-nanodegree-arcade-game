@@ -13,7 +13,12 @@ var Enemy = function(startX,startY, speed) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-};
+}
+
+Enemy.prototype.randomSpeed = function() {
+  var speedMultiply = Math.floor(Math.random() * 5 + 1);
+  this.speed = 75 * speedMultiply;
+}
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -21,9 +26,9 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x += (Math.random()*60*dt);
+    this.x += this.speed * 1 * dt;
     this.reset();
-};
+}
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -32,10 +37,15 @@ Enemy.prototype.render = function() {
 
 Enemy.prototype.reset = function() {
   if (this.x >= 500) {
-    this.x = -101;
-    this.speed = getRandomArbitrary(250, 450);
+    this.x = -60;
+    this.speed = getRandomArbitrary(500, 900); // This creates a new random speed for the enemy bug when after it resets. Without this, the speed of each enemy bug is the same for each "lap" it does. By adding this line of code, each bug starts a new lap at a random, and therefore different, speed.
   }
-};
+}
+
+Enemy.prototype.randomSpeed = function() {
+  var speedMultiply = Math.floor(Math.random() * 5 + 1);
+  this.speed = 75 * speedMultiply;
+}
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -50,16 +60,16 @@ var Player = function(x,y) {
   this.x = playerStartX;
   this.y = playerStartY;
   this.sprite = 'images/char-boy.png';
-};
+}
 
 // Update the Player's position
 // TODO: reset Player position when it hits a bug
 Player.prototype.update = function() {
-};
+}
 
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
+}
 
 Player.prototype.handleInput = function(direction) {
   if (direction === 'left') {
@@ -74,7 +84,7 @@ Player.prototype.handleInput = function(direction) {
   if (direction === 'down') {
     this.y += 90;
   }
-};
+}
 
 Player.prototype.reset = function() {
   this.x = playerStartX;
@@ -85,15 +95,14 @@ Player.prototype.reset = function() {
 var allEnemies = [];
 // Instantiate all enemies
 for (var i = 0; i < 3; i++) {
-  var tempSpeed = Math.floor(Math.random() * 5 + 1) * 75;
+  var tempSpeed = Math.floor(Math.random() * 5 + 1) * 95;
   allEnemies.push(new Enemy(-60, 60 + 85 * i, tempSpeed));
-};
+}
+
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-
-var player = new Player(playerStartX,playerStartY);
-
+var player = new Player();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -103,7 +112,7 @@ document.addEventListener('keyup', function(e) {
         38: 'up',
         39: 'right',
         40: 'down'
-    };
+    }
 
     player.handleInput(allowedKeys[e.keyCode]);
-});
+})
