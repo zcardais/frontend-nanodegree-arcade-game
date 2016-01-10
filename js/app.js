@@ -39,7 +39,7 @@ Enemy.prototype.reset = function() {
   if (this.x > 500) {
     this.x = -60;
     // Create a new random speed for the enemy bug to use after it resets. Without this, the speed of each enemy bug is the same for each "lap." By adding this line of code, each bug begins a new lap at different speeds.
-    this.speed = getRandomArbitrary(500, 900);
+    this.speed = getRandomArbitrary(200, 800);
   }
 };
 
@@ -97,12 +97,14 @@ Player.prototype.handleInput = function(direction) {
 
 Player.prototype.checkCollisions = function() {
   for (var i = 0; i < allEnemies.length; i++) {
+    var enemy = allEnemies[i];
     /*add calculation to determine row*/
     if (this.x >= enemy.x + 0 &&
         this.x < enemy.x + 100 &&
         this.y >= enemy.y + 0 &&
         this.y < enemy.y + 85) {
           console.log('Splat!');
+          player.reset();
         }
     }
 };
