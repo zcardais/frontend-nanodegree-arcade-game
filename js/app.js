@@ -98,15 +98,18 @@ Player.prototype.handleInput = function(direction) {
 Player.prototype.checkCollisions = function() {
   for (var i = 0; i < allEnemies.length; i++) {
     var enemy = allEnemies[i];
-    /*add calculation to determine row*/
-    if (this.x >= enemy.x + 0 &&
-        this.x < enemy.x + 100 &&
-        this.y >= enemy.y + 0 &&
-        this.y < enemy.y + 85) {
-          console.log('Splat!');
-          player.reset();
-        }
+    // Reset the player back to start if it collides with enemy bug
+    if (this.x >= enemy.x && this.x < (enemy.x + 100) && this.y >= enemy.y && this.y < (enemy.y + 85)) {
+      player.reset();
+      console.log('Splat!');
     }
+    // Reset the player to start if user moves beyond game walls
+    if (this.x < 0 || this.x > 400 || this.y > 400) {
+      player.reset();
+      alert('You went out of bounds. Try again!')
+      console.log('Out of bounds!');
+    }
+  }
 };
 
 Player.prototype.reset = function() {
