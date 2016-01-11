@@ -7,6 +7,12 @@
 Welcome to The Highway Bug Game. A throwback to the classic arcade game, Frogger.
 
 ## How to Play
+1. Open index.html in your browser.
+2. Use your arrow keys to move the player.
+3. If you collide with an enemy bug, your player will reset to starting position.
+4. If you try to move outside of the game’s canvas, your player will reset to the starting position.
+5. If you reach the water without going out of bounds and not colliding with an enemy bug, you win!
+6. Click OK or hit the <return> key to play again.
 
 ### Objective
 Help your player across the road avoiding the enemy bugs along the way. Reach the water without being touched to win!
