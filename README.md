@@ -1,12 +1,34 @@
-frontend-nanodegree-arcade-game
+# P3: Class Arcade Game Clone
 ===============================
+## GitHub repo
+[frontend-nanodegree-arcade-game](https://github.com/zcardais/frontend-nanodegree-arcade-game.git)
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+## The Highway Bug Game
+Welcome to The Highway Bug Game. A throwback to the classic arcade game, Frogger.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## How to Play
 
-# HIGHWAY BUG GAME
-Welcome to Highway Bug, my take on the classic arcade game Frogger.
+### Objective
+Help your player across the road avoiding the enemy bugs along the way. Reach the water without being touched to win!
 
-## HOW TO PLAY
-Help your player across the road avoiding the enemy bugs along the way. Use the arrow keys to move and cross the road. Be careful not to collide with any bugs though or you'll have to start over! Get to the water without being touched to win. Good luck!
+### Rules
+Use the arrow keys to move and cross the road. Be careful not to collide with any enemy bugs though or you'll have to start over! Also, stay inside the dimensions of the game's canvas…you have to start over if you move outside the walls!
+
+Good luck!
+
+## Resources
+
+### Books
+1. [JavaScript & jQuery](http://www.amazon.com/gp/product/1118531647/ref=pd_lpo_sbs_dp_ss_1?pf_rd_p=1944687502&pf_rd_s=lpo-top-stripe-1&pf_rd_t=201&pf_rd_i=144934013X&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=0B3RHN34P1FT05WZ6NZX) by Jon Ducket
+2. [Head First JavaScript Programming](http://www.amazon.com/Head-First-JavaScript-Programming-Freeman/dp/144934013X) by Elisabeth Freeman and Eric Freeman
+
+### Websites
+1. [Collision Detection - Game Development | MDN](https://developer.mozilla.org/en-US/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript/Collision_detection)
+2. [Team Treehouse](https://teamtreehouse.com/library/objectoriented-javascript)
+3. [Lynda.com](http://www.lynda.com/JavaScript-tutorials/JavaScript-Functions/148137-2.html)
+
+### Udacity Forum Posts
+1. [My player moves off the screen pass the water](https://discussions.udacity.com/t/my-player-moves-off-the-screen-pass-the-water/42425/6)
+2. [Player bug collision problem](https://discussions.udacity.com/t/player-bug-collision-problem/15068)
+3. [Collision Detection Help](https://discussions.udacity.com/t/collision-detection-help/30442)
+4. [Collision-detection loop](https://discussions.udacity.com/t/collision-detection-loop/39113)
