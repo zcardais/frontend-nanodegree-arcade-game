@@ -61,7 +61,7 @@ var Player = function(x,y) {
   this.x = playerStartX;
   this.y = playerStartY;
   this.sprite = 'images/char-boy.png';
-}
+};
 
 // Update the Player's position
 Player.prototype.update = function() {
@@ -73,11 +73,11 @@ Player.prototype.update = function() {
     alert("You win! Click 'OK' to play again.");
     player.reset();
   }
-}
+};
 
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Player.prototype.handleInput = function(direction) {
   if (direction === 'left') {
@@ -106,7 +106,7 @@ Player.prototype.checkCollisions = function() {
     // Reset the player to start if user moves beyond game walls
     if (this.x < 0 || this.x > 400 || this.y > 400) {
       player.reset();
-      alert('You went out of bounds. Try again!')
+      alert('You went out of bounds. Try again!');
       console.log('Out of bounds!');
     }
   }
@@ -125,7 +125,7 @@ for (var i = 0; i < 3; i++) {
   var tempSpeed = Math.floor(Math.random() * 5 + 1) * 99;
   enemy = new Enemy();
   allEnemies.push(new Enemy(-100, (50 + (90 * i)), tempSpeed));
-}
+};
 
 // Place the player object in a variable called player
 var player = new Player();
@@ -138,6 +138,6 @@ document.addEventListener('keyup', function(e) {
         38: 'up',
         39: 'right',
         40: 'down'
-    }
+    };
     player.handleInput(allowedKeys[e.keyCode]);
-})
+});
